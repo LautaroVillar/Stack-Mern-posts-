@@ -38,7 +38,6 @@ export const updatePost = async (req,res)=> {
     /* vamos hacer una consulta a traves del modelo post y utlizamos el comando findByIdAndUpdate, este comando busca un id y lo actualiza */
    /*  para actualizar a un nuevo dato que cargo debo añadir otra propiedad que se llama {new: true}, esto me devuleve el objeto nuevo */
    const updatePost = await Post.findByIdAndUpdate(req.params.id, req.body, {new: true})
-   console.log(updatePost)
    return res.send(updatePost)
    } catch (error) {
     return res.status(500).json({message: error.message})
